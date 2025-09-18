@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akhil Raj Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+    body { background: linear-gradient(to bottom, #0f0f0f, #111, #000); color: #eee; }
+    a { text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* Container */
+    .container { max-width: 1200px; margin: auto; padding: 20px; }
+
+    /* Header */
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-circle { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(45deg, #a855f7, #ec4899); display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; }
+    nav a { margin-left: 20px; color: #ccc; transition: 0.3s; }
+    nav a:hover { color: #fff; }
+    .resume-btn { background: #a855f7; color: #fff; padding: 8px 15px; border-radius: 10px; display: inline-flex; align-items: center; gap: 5px; }
+    .resume-btn:hover { background: #9333ea; }
+
+    /* Hero */
+    .hero { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 60px; }
+    .hero-text { flex: 1; min-width: 300px; }
+    .hero-text h1 { font-size: 3rem; margin-top: 10px; font-weight: 900; }
+    .hero-text p { margin-top: 15px; color: #ccc; max-width: 600px; line-height: 1.5; }
+    .hero-buttons { margin-top: 20px; display: flex; gap: 15px; }
+    .btn { padding: 10px 20px; border-radius: 10px; font-weight: 500; cursor: pointer; transition: 0.3s; }
+    .btn-primary { background: #fff; color: #111; }
+    .btn-primary:hover { transform: scale(1.05); }
+    .btn-secondary { border: 1px solid #555; color: #ccc; }
+    .btn-secondary:hover { background: #222; }
+
+    .hero-img { flex: 1; min-width: 300px; position: relative; }
+    .hero-img-inner { border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    .hero-img-inner img { width: 100%; height: 350px; object-fit: cover; }
+
+    /* Sections */
+    section { margin-bottom: 60px; }
+    h2 { font-size: 2rem; font-weight: 700; margin-bottom: 20px; }
+
+    /* About */
+    #about { background: #111; padding: 30px; border-radius: 20px; }
+
+    /* Skills */
+    #skills { background: #111; padding: 30px; border-radius: 20px; }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill { padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; color: #fff; transition: 0.3s; cursor: default; }
+    .skill:hover { transform: scale(1.1); }
+
+    /* Projects */
+    #projects .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .project-card { background: #111; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.5); transition: 0.3s; }
+    .project-card:hover { transform: translateY(-5px); }
+    .project-card img { height: 200px; object-fit: cover; width: 100%; }
+    .project-info { padding: 15px; }
+    .project-info p { color: #ccc; font-size: 0.9rem; margin-bottom: 10px; }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+    .tech-tags span { background: #333; padding: 3px 8px; border-radius: 10px; font-size: 0.8rem; }
+
+    /* Contact */
+    #contact { background: #111; padding: 30px; border-radius: 20px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .contact-info { background: #111; padding: 20px; border-radius: 15px; }
+    .contact-info div { margin-top: 10px; display: flex; align-items: center; gap: 10px; }
+    form input, form textarea { width: 100%; padding: 10px; border-radius: 10px; background: #111; border: 1px solid #444; color: #eee; margin-bottom: 10px; }
+    form button { background: #ec4899; color: #111; padding: 10px 20px; border-radius: 10px; font-weight: 500; cursor: pointer; }
+
+    /* Footer */
+    footer { text-align: center; color: #777; margin-top: 40px; font-size: 0.9rem; }
+
+    /* Responsive */
+    @media (max-width: 768px){
+      .hero { flex-direction: column; }
+      .contact-grid { grid-template-columns: 1fr; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <div class="logo-circle">AR</div>
+        <div>
+          <div>Akhil Raj</div>
+          <div style="color:#aaa;font-size:0.9rem;">Full-Stack Developer • MERN • DSA</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="resume-btn" href="#">Resume</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <p style="color:#ec4899;font-weight:500;">Hello, I'm</p>
+        <h1>Akhil Raj</h1>
+        <p>Full-Stack Developer skilled in MERN stack, Cloudinary, and DSA. Focused on building scalable apps with clean code.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#projects">See Projects</a>
+          <a class="btn btn-secondary" href="mailto:akhil.raj.843417@gmail.com">Contact</a>
+        </div>
+        <div style="margin-top:20px;">
+          <a href="https://github.com/Akhil007865678" style="margin-right:15px;color:#ccc;">Github</a>
+          <a href="https://linkedin.com/in/akhil-raj-916943257/" style="color:#ccc;">LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <div class="hero-img-inner">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&crop=faces" alt="Akhil Raj">
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About me</h2>
+      <p>Full-Stack Developer skilled in MERN Stack, REST APIs, Tailwind CSS, and Cloudinary. Strong foundation in DSA and Git. Delivered features like authentication, video streaming, and e-commerce with focus on performance and clean code.</p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-list" id="skills-list"></div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid" id="projects-grid"></div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Get in touch</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>I'm available for internships and full-time roles. Connect on LinkedIn or email me.</p>
+          <div><strong>Phone:</strong> (+91) 843 417 4340</div>
+          <div><strong>Email:</strong> akhil.raj.843417@gmail.com</div>
+          <div><a href="https://leetcode.com/u/akhilraj007/" target="_blank" style="color:#ec4899;">LeetCode Profile</a></div>
+        </div>
+        <form id="contact-form">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea rows="5" placeholder="Message" required></textarea>
+          <button type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      © <span id="year"></span> Akhil Raj — Full-Stack Developer<br>
+      Designed with ❤️ using HTML, CSS & JS
+    </footer>
+  </div>
+
+  <script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Skills data
+    const skills = [
+      { name: 'C', color: '#ef4444' },
+      { name: 'Java', color: '#3b82f6' },
+      { name: 'JavaScript', color: '#facc15' },
+      { name: 'HTML', color: '#f97316' },
+      { name: 'CSS', color: '#60a5fa' },
+      { name: 'React.js', color: '#06b6d4' },
+      { name: 'Tailwind CSS', color: '#14b8a6' },
+      { name: 'Node.js', color: '#22c55e' },
+      { name: 'Express.js', color: '#4b5563' },
+      { name: 'MongoDB', color: '#16a34a' },
+      { name: 'PostgreSQL', color: '#1d4ed8' },
+      { name: 'Socket.IO', color: '#ec4899' },
+      { name: 'WebSockets', color: '#6366f1' },
+      { name: 'Cloudinary', color: '#a855f7' },
+      { name: 'Git', color: '#f97316' },
+      { name: 'GitHub', color: '#374151' }
+    ];
+
+    const skillsContainer = document.getElementById('skills-list');
+    skills.forEach(s => {
+      const span = document.createElement('span');
+      span.className = 'skill';
+      span.textContent = s.name;
+      span.style.background = s.color;
+      skillsContainer.appendChild(span);
+    });
+
+    // Projects data
+    const projects = [
+      { title: 'YouTube Clone', desc: 'Video sharing platform with uploads, authentication, player, search & subscriptions.', tech: ['MERN', 'Cloudinary', 'JWT'], live: 'https://youtube-oeis.onrender.com/', repo: 'https://github.com/Akhil007865678/YouTube-clone', img: 'https://global.discourse-cdn.com/brave/original/3X/d/1/d176440c078b26c4c131b571138559a9a662a643.jpeg' },
+      { title: 'Chat Application', desc: 'Real-time chat app using Socket.IO and JWT authentication.', tech: ['MERN', 'Socket.IO', 'JWT'], live: '', repo: 'https://github.com/Akhil007865678/Chat-Application', img: 'https://cdn.dribbble.com/userupload/14144819/file/original-7295e8657de812f76e729719d18cc0f7.png' },
+      { title: 'E-commerce Platform', desc: 'Product listings, cart, authentication, and Cloudinary integration.', tech: ['MERN', 'Cloudinary'], live: '', repo: 'https://github.com/Akhil007865678/Ecommerce-website', img: 'https://sagartech.co.in/blogs/wp-content/uploads/2024/08/Ecommerce-Website-Design-Feature-Image-scaled.webp' }
+    ];
+
+    const projectsContainer = document.getElementById('projects-grid');
+    projects.forEach(p => {
+      const card = document.createElement('a');
+      card.href = p.live || p.repo;
+      card.target = '_blank';
+      card.className = 'project-card';
+
+      const img = document.createElement('img');
+      img.src = p.img;
+      img.alt = p.title;
+
+      const info = document.createElement('div');
+      info.className = 'project-info';
+      const desc = document.createElement('p');
+      desc.textContent = p.desc;
+      const techDiv = document.createElement('div');
+      techDiv.className = 'tech-tags';
+      p.tech.forEach(t => {
+        const tag = document.createElement('span');
+        tag.textContent = t;
+        techDiv.appendChild(tag);
+      });
+
+      info.appendChild(desc);
+      info.appendChild(techDiv);
+
+      const linksDiv = document.createElement('div');
+      linksDiv.style.marginTop = '10px';
+      if(p.live){
+        const liveLink = document.createElement('a');
+        liveLink.href = p.live;
+        liveLink.target = '_blank';
+        liveLink.style.color = '#ec4899';
+        liveLink.style.marginRight = '10px';
+        liveLink.textContent = 'Live';
+        linksDiv.appendChild(liveLink);
+      }
+      const repoLink = document.createElement('a');
+      repoLink.href = p.repo;
+      repoLink.target = '_blank';
+      repoLink.style.color = '#ccc';
+      repoLink.textContent = 'Repo';
+      linksDiv.appendChild(repoLink);
+
+      info.appendChild(linksDiv);
+
+      card.appendChild(img);
+      card.appendChild(info);
+
+      projectsContainer.appendChild(card);
+    });
+
+    // Contact form
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thanks! This demo form does not send email.');
+    });
+  </script>
+</body>
+</html>
