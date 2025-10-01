@@ -266,10 +266,10 @@
     });
 
     // EmailJS Contact Form
-    emailjs.init('pYZXMlIJdHYP2fkc2');
+    emailjs.init("pYZXMlIJdHYP2fkc2");
     document.getElementById('contact-form').addEventListener('submit', function(e){
       e.preventDefault();
-      emailjs.sendForm('service_8vzgp9k', 'template_dgr16sb', this)
+      emailjs.sendForm("service_8vzgp9k", "template_dgr16sb", this)
         .then(function(){
           alert("Message sent successfully!");
           document.getElementById('contact-form').reset();
