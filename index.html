@@ -158,9 +158,9 @@
           <div><a href="https://leetcode.com/u/akhilraj007/" target="_blank" style="color:#ec4899;">LeetCode Profile</a></div>
         </div>
         <form id="contact-form">
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email" required>
-          <textarea rows="5" placeholder="Message" required></textarea>
+          <input type="text" name="from_name" placeholder="Your Name" required>
+          <input type="email" name="reply_to" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Message" required></textarea>
           <button type="submit">Send message</button>
         </form>
       </div>
@@ -173,11 +173,13 @@
     </footer>
   </div>
 
+  <!-- Scripts -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     // Update year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Skills data
+    // Skills
     const skills = [
       { name: 'C', color: '#ef4444' },
       { name: 'Java', color: '#3b82f6' },
@@ -196,7 +198,6 @@
       { name: 'Git', color: '#f97316' },
       { name: 'GitHub', color: '#374151' }
     ];
-
     const skillsContainer = document.getElementById('skills-list');
     skills.forEach(s => {
       const span = document.createElement('span');
@@ -206,13 +207,12 @@
       skillsContainer.appendChild(span);
     });
 
-    // Projects data
+    // Projects
     const projects = [
       { title: 'YouTube Clone', desc: 'Video sharing platform with uploads, authentication, player, search & subscriptions.', tech: ['MERN', 'Cloudinary', 'JWT'], live: 'https://youtube-oeis.onrender.com/', repo: 'https://github.com/Akhil007865678/YouTube-clone', img: 'https://global.discourse-cdn.com/brave/original/3X/d/1/d176440c078b26c4c131b571138559a9a662a643.jpeg' },
       { title: 'Chat Application', desc: 'Real-time chat app using Socket.IO and JWT authentication.', tech: ['MERN', 'Socket.IO', 'JWT'], live: '', repo: 'https://github.com/Akhil007865678/Chat-Application', img: 'https://cdn.dribbble.com/userupload/14144819/file/original-7295e8657de812f76e729719d18cc0f7.png' },
       { title: 'E-commerce Platform', desc: 'Product listings, cart, authentication, and Cloudinary integration.', tech: ['MERN', 'Cloudinary'], live: '', repo: 'https://github.com/Akhil007865678/Ecommerce-website', img: 'https://sagartech.co.in/blogs/wp-content/uploads/2024/08/Ecommerce-Website-Design-Feature-Image-scaled.webp' }
     ];
-
     const projectsContainer = document.getElementById('projects-grid');
     projects.forEach(p => {
       const card = document.createElement('a');
@@ -265,10 +265,18 @@
       projectsContainer.appendChild(card);
     });
 
-    // Contact form
+    // EmailJS Contact Form
+    emailjs.init(pYZXMlIJdHYP2fkc2);
     document.getElementById('contact-form').addEventListener('submit', function(e){
       e.preventDefault();
-      alert('Thanks! This demo form does not send email.');
+      emailjs.sendForm(service_8vzgp9k, template_dgr16sb, this)
+        .then(function(){
+          alert("Message sent successfully!");
+          document.getElementById('contact-form').reset();
+        }, function(error){
+          console.error("Failed to send message:", error);
+          alert("Failed to send message. Please try again.");
+        });
     });
   </script>
 </body>
